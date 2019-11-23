@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+        font-size: 14px;
+        height: 100%;
+      }
+      .painel {
+        display: block;
+        flex-wrap: wrap;
+        background-color: #fff;
+        padding: 50px;
+      }
+      .painel-video {
+        width: 100%;
+        height: 400px;
+        background-color: #000;
+        text-align: center;
+        margin: 0 auto;
+      }
+      .painel button {
+        width: auto;
+        border: 1px solid #d1d1d1;
+        outline: 0;
+        cursor: pointer;
+        color: #000;
+        background-color: #f2f2f2;
+      }
+      .disabled {
+        background-color: #fff !important;
+        border: 1px solid #d8d8d8 !important;
+        cursor: default !important;
+      }
+      button:hover {
+        background-color: #d2e7ff;
+      }
+      button:hover:disabled {
+        background-color: #e2e2e2;
+      }
+      .btn-normal {
+        border: 1px solid #ccc;
+        display: inline-block;
+        background-color: #f2f2f2;
+        padding: 6px 12px;
+        cursor: pointer;
+        border-radius: 30px;
+        vertical-align: middle;
+        line-height: 1.8em;
+      }
+      .m20 {
+        margin: 20px auto;
+        width: auto;
+      } /* MARGIN de 20px */
+      .p20 {
+        padding: 20px;
+        box-sizing: border-box;
+      } /* PADDING 20px */
+    </style>
+  </head>
+
+  <body>
+    <div class="painel-video">
+      <device type="media" onchange="update(this.data)"></device>
+      <video autoplay width="70%" height="100%"></video>
+    </div>
+
+    <div class="m20 p20 painel-menu">
+      <button class="btn-normal" id="cx-btn-start" onclick="startButton()">
+        Iniciar dispositivo de captura
+      </button>
+
+      <button
+        class="btn-normal disabled"
+        id="cx-btn-pause"
+        onclick="pauseButton()"
+      >
+        Pausar dispositivo de captura
+      </button>
+
+      <button
+        class="btn-normal disabled"
+        id="cx-btn-stop"
+        onclick="stopButton()"
+      >
+        Parar dispositivo de captura
+      </button>
+    </div>
+  </body>
+
+  <script src="./app.js"></script>
+</html>
